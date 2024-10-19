@@ -1,0 +1,22 @@
+@mixin flex-utils($display, $flexDirection ,$aligItens, $justifyContent, ) {
+    display: $display;
+    flex-direction: $flexDirection;
+    align-items: $aligItens;
+    justify-content: $justifyContent;
+}
+
+$breakpoints: (
+    'laptop': 1200px,
+    'tablet': 991px,
+    'mobile': 560px
+);
+
+@mixin responsivo($breakpointName) {
+    @if map-has-key($breakpoints, $breakpointName ) {
+        @media (max-width: map-get($breakpoints, $breakpointName)) {
+            @content;
+        }
+    } @else {
+        @warn "Este breakpoint que você definiu não existe!"
+    }
+}
