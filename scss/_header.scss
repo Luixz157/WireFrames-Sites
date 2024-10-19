@@ -212,3 +212,132 @@
         }
     }
 }
+
+.wireframes-4 {
+    display: none;
+    .container {
+        header {
+            padding: 46px 0;
+            margin-bottom: 52px;
+            @include flex-utils(flex, row, center, space-between);
+            .logo-content {
+                @include flex-utils(flex, row, center, center);
+                gap: 20px;
+                span {
+                    font-size: 1rem;
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 600;
+                    color: $primary-darker;
+                }
+            }
+            nav {
+                @include flex-utils(flex, row, center, space-between);
+                ul {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 56px;
+                    li {
+                        @include flex-utils(flex, row, center, center);
+                        gap: 11px;
+                        a {
+                            font-family: 'Rubik', sans-serif;
+                            font-weight: 400;
+                            font-size: 0.875rem;
+                            line-height: 1.037rem;
+                            letter-spacing: -2%;
+                            color: $primary-dark;
+                        }
+                        &:last-of-type a {
+                            font-weight: 500;
+                        }
+                        .circle-gray {
+                            @include flex-utils(flex, row, center, center);
+                            width: 24px;
+                            height: 24px;
+                            background-color: $gray-light;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+            .menu {
+                display: none;
+            }
+        }
+    }
+    @include responsivo('tablet') {
+        .container {
+            header {
+                nav {
+                    display: none;
+                }
+                .menu {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.wireframes-5 {
+    .container {
+        header {
+            padding: 46px 0;
+            margin-bottom: 52px;
+            @include flex-utils(flex, row, center, space-between);
+            .logo-content {
+                @include flex-utils(flex, row, center, center);
+                gap: 20px;
+                span {
+                    font-size: 1rem;
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 600;
+                    color: $primary-darker;
+                }
+            }
+            nav {
+                @include flex-utils(flex, row, center, space-between);
+                ul {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 56px;
+                    li {
+                        @include flex-utils(flex, row, center, center);
+                        gap: 11px;
+                        a {
+                            font-family: 'Rubik', sans-serif;
+                            font-weight: 400;
+                            font-size: 0.875rem;
+                            line-height: 1.037rem;
+                            letter-spacing: -2%;
+                            color: $primary-dark;
+                        }
+                        &:last-of-type a {
+                            font-weight: 500;
+                        }
+                        .circle-gray {
+                            @include flex-utils(flex, row, center, center);
+                            width: 24px;
+                            height: 24px;
+                            background-color: $gray-light;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+            .menu {
+                display: none;
+            }
+        }
+    }
+    @include responsivo('tablet') {
+        .container {
+            header {
+                nav {
+                    display: none;
+                }
+                .menu {
+                    display: block;
+                }
+            }
+        }
+    }
+}
