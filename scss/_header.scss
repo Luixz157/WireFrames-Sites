@@ -24,11 +24,7 @@
                 max-width: 370px;
                 li {
                     a {
-                        font-family: 'Roboto', sans-serif;
-                        font-size: 0.875rem;
-                        line-height: 1.026rem;
-                        color: $primary-dark;
-                        font-weight: 400;
+                        @include font-utils('Roboto', 400, 0.875rem, 1.026rem, none, $primary-dark);
                     }
                 }
             }
@@ -83,10 +79,7 @@
             .div-logo {
                 a {
                     @include flex-utils(flex, row, center, space-between);
-                    font-size: 1rem;
-                    font-family: 'Roboto', sans-serif;
-                    font-weight: 400;
-                    color: $primary-dark;
+                    @include font-utils('Roboto', 400, 1rem, auto, none, $primary-dark);
                     gap: 20px;
                 }
             }
@@ -94,11 +87,7 @@
                 @include flex-utils(flex, row, center, space-between);
                 gap: 32px;
                 span {
-                    font-family: 'Roboto', sans-serif;
-                    font-weight: 500;
-                    font-size: 0.875rem;
-                    line-height: 1.026rem;
-                    color: $gray-muted;
+                    @include font-utils('Roboto', 500, 0.875rem, 1.026rem, none, $gray-muted);
                 }
                 button {
                     background-color: $gray-lighting-op80;
@@ -148,10 +137,7 @@
                     @include flex-utils(flex, row, center, center);
                     gap: 11px;
                     span {
-                        font-family: 'Roboto', sans-serif;
-                        font-size: 1rem;
-                        font-weight: 600;
-                        color: $white;
+                        @include font-utils('Roboto', 600, 1rem, auto, none, $white);
                     }
                 }
                 ul {
@@ -160,12 +146,7 @@
                     @include flex-utils(flex, row, center, space-between);
                     li {
                         a {
-                            font-family: 'Noto Sans', sans-serif;
-                            font-weight: 500;
-                            font-size: 0.875rem;
-                            line-height: 1.192rem;
-                            letter-spacing: -2%;
-                            color: $white;
+                            @include font-utils('Noto Sans', 500, 0.875rem, 1.192rem, -2%, $white);
                         }
                     }
                 }
@@ -181,12 +162,7 @@
                     background-color: $gray-light;
                 }
                 a {
-                    font-family: 'Noto Sans', sans-serif;
-                    font-weight: 700;
-                    font-size: 0.875rem;
-                    line-height: 1.192rem;
-                    letter-spacing: -2%;
-                    color: $white;
+                    @include font-utils('Noto Sans', 700, 0.875rem, 1.192rem, -2%, $white);
                 }
             }
             .menu {
@@ -224,10 +200,7 @@
                 @include flex-utils(flex, row, center, center);
                 gap: 20px;
                 span {
-                    font-size: 1rem;
-                    font-family: 'Roboto', sans-serif;
-                    font-weight: 600;
-                    color: $primary-darker;
+                    @include font-utils('Roboto', 600, 1rem, auto, none, $primary-darker);
                 }
             }
             nav {
@@ -239,12 +212,7 @@
                         @include flex-utils(flex, row, center, center);
                         gap: 11px;
                         a {
-                            font-family: 'Rubik', sans-serif;
-                            font-weight: 400;
-                            font-size: 0.875rem;
-                            line-height: 1.037rem;
-                            letter-spacing: -2%;
-                            color: $primary-dark;
+                            @include font-utils('Rubik', 400, 0.875rem, 1.037rem, -2%, $primary-dark);
                         }
                         &:last-of-type a {
                             font-weight: 500;
@@ -279,6 +247,7 @@
 }
 
 .wireframes-5 {
+    display: none;
     .container {
         header {
             padding: 46px 0;
@@ -288,10 +257,7 @@
                 @include flex-utils(flex, row, center, center);
                 gap: 20px;
                 span {
-                    font-size: 1rem;
-                    font-family: 'Roboto', sans-serif;
-                    font-weight: 600;
-                    color: $primary-darker;
+                    @include font-utils('Roboto', 600, 1rem, auto, none, $primary-darker);
                 }
             }
             nav {
@@ -303,12 +269,7 @@
                         @include flex-utils(flex, row, center, center);
                         gap: 11px;
                         a {
-                            font-family: 'Rubik', sans-serif;
-                            font-weight: 400;
-                            font-size: 0.875rem;
-                            line-height: 1.037rem;
-                            letter-spacing: -2%;
-                            color: $primary-dark;
+                            @include font-utils('Rubik', 400, 0.75rem, 1.037rem, -2%, $primary-dark);
                         }
                         &:last-of-type a {
                             font-weight: 500;
@@ -320,6 +281,59 @@
                             background-color: $gray-light;
                             border-radius: 50%;
                         }
+                    }
+                }
+            }
+            .menu {
+                display: none;
+            }
+        }
+    }
+    @include responsivo('tablet') {
+        .container {
+            header {
+                nav {
+                    display: none;
+                }
+                .menu {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.wireframes-6 {
+    background-color: $primary-medium;
+    .container {
+        header {
+            @include flex-utils(flex, row, center, space-between);
+            padding: 32px 0;
+            margin-bottom: 78px;
+            .logo {
+                @include flex-utils(flex, row, center, center);
+                gap: 20px;
+                span {
+                    @include font-utils('Roboto', 700, 1rem, auto, none, $white);
+                }
+            }
+            nav {
+                ul {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 56px;
+                    li {
+                        a {
+                            @include font-utils('PT Sans', 400, 0.938rem, 1.213rem, -1%, $white);
+                        }
+                        button {
+                            @include font-utils('PT Sans', 700, 0.938rem, 1.213rem, -1%, $white);
+                            padding: 13px 40px;
+                            border: 1px solid $white;
+                            border-radius: 5px;
+                        }
+                    }
+                    &:last-of-type li {
+                        gap: 63px;
                     }
                 }
             }

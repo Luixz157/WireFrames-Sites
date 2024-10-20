@@ -5,6 +5,15 @@
     justify-content: $justifyContent;
 }
 
+@mixin font-utils($family, $weight, $size, $lHeight, $lSpacing, $color) {
+    font-family: $family, sans-serif;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $lHeight;
+    letter-spacing: $lSpacing;
+    color: $color;
+}
+
 $breakpoints: (
     'laptop': 1200px,
     'tablet': 991px,

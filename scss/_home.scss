@@ -6,22 +6,13 @@
             .texts-primary {
                 @include flex-utils(flex, column, center, space-between);
                 h1 {
-                    font-family: 'Montserrat', sans-serif;
-                    font-weight: 800;
-                    font-size: 3rem;
-                    line-height: 3.657rem;
-                    letter-spacing: -1%;
-                    color: $primary-medium;
+                    @include font-utils('Montserrat', 800, 3rem, 3.657rem, -1%, $primary-medium);
                     margin-bottom: 24px;
                     width: 100%;
                     max-width: 863px;
                 }
                 p {
-                    font-family: 'Roboto', sans-serif;
-                    font-weight: 400;
-                    font-size: 1.125rem;
-                    line-height: 1.318rem;
-                    color: $primary-dark;
+                    @include font-utils('Roboto', 400, 1.125rem, 1.318rem, none, $primary-dark);
                     margin-bottom: 40px;
                 }
                 .btn-input {
@@ -38,22 +29,14 @@
                         height: 100%;
                         background-color: transparent;
                         border: none;
-                        font-family: 'Roboto', sans-serif;
-                        font-size: 0.875rem;
-                        font-weight: 400;
-                        line-height: 1.026rem;
-                        color: $gray-muted;
+                        @include font-utils('Roboto', 400, 0.875rem, 1.026rem, none, $gray-muted);
                     }
                     button {
                         width: 100%;
                         max-width: 124px;
                         border-radius: 120px;
                         background-color: $gray-muted;
-                        color: $white;
-                        font-family: 'Roboto', sans-serif;
-                        font-size: 0.875rem;
-                        font-weight: 500;
-                        line-height: 1.026rem;
+                        @include font-utils('Roboto', 500, 0.875rem, 1.026rem, none, $white);
                         padding: 11px 20px;
                     }
                 }
@@ -110,22 +93,13 @@
                 h1 {
                     width: 100%;
                     max-width: 586px;
-                    font-family: 'Lato', sans-serif;
-                    font-size: 3rem;
-                    font-weight: 800;
-                    line-height: 3.6rem;
-                    letter-spacing: -1%;
-                    color: $primary-medium;
+                    @include font-utils('Lato', 800, 3rem, 3.6rem, -1%, $primary-medium);
                     margin-bottom: 16px;
                 }
                 p {
                     width: 100%;
                     max-width: 463px;
-                    font-family: 'Open Sans', sans-serif;
-                    font-size: 1.125rem;
-                    font-weight: 400;
-                    line-height: 1.688rem;
-                    color: $primary-dark;
+                    @include font-utils('Open Sans', 400, 1.125rem, 1.688rem, none, $primary-dark);
                     margin-bottom: 52px;
                 }
                 button {
@@ -141,11 +115,7 @@
                     }
                     span {
                         margin-left: 11px;
-                        color: $white;
-                        font-family: 'Roboto', sans-serif;
-                        font-size: 0.875rem;
-                        font-weight: 700;
-                        line-height: 1.026rem;
+                        @include font-utils('Roboto', 700, 0.875rem, 1.026rem, none, $white);
                     }
                 }
             }
@@ -276,20 +246,11 @@
                 .texts {
                     margin-bottom: 36px;
                     h4 {
-                        font-family: 'Noto Sans', sans-serif;
-                        font-weight: 700;
-                        font-size: 1.125rem;
-                        line-height: 1.533rem;
-                        letter-spacing: -1%;
-                        color: $primary-dark;
+                        @include font-utils('Noto Sans', 700, 1.125rem, 1.533rem, -1%, $primary-dark);
                         margin-bottom: 8px
                     }
                     p {
-                        font-family: 'Lato', sans-serif;
-                        font-size: 1rem;
-                        line-height: 1.2rem;
-                        font-weight: 400;
-                        color: $gray-muted;
+                        @include font-utils('Lato', 400, 1rem, 1.2rem, none, $gray-muted);
                     }
                 }
                 .inputs {
@@ -303,11 +264,7 @@
                         padding: 18px 22px;
                         background-color: $gray-lighting;
                         border: none;
-                        font-family: 'Roboto', sans-serif;
-                        font-weight: 400;
-                        font-size: 0.875rem;
-                        line-height: 1.026rem;
-                        color: $gray-secondary;
+                        @include font-utils('Roboto', 400, 0.875rem, 1.026rem, none, $gray-secondary);
                         border-radius: 8px;
                     }
                 }
@@ -317,12 +274,7 @@
                     border-radius: 8px;
                     background-color: $primary-dark;
                     padding: 16px auto;
-                    color: $white;
-                    font-family: 'Noto Sans', sans-serif;
-                    font-size: 1rem;
-                    font-weight: 600;
-                    letter-spacing: -3%;
-                    line-height: 1.362rem;
+                    @include font-utils('Noto Sans', 600, 1rem, 1.362rem, -3%, $white);
                 }
             }
         }
@@ -334,12 +286,7 @@
         background-color: $white;
         .container {
             h6 {
-                font-size: 0.875rem;
-                line-height: 1.192rem;
-                font-weight: 500;
-                font-family: 'Noto Sans', sans-serif;
-                letter-spacing: -1%;
-                color: $gray-muted;
+                @include font-utils('Noto Sans', 500, 0.875rem, 1.192rem, -1%, $gray-muted);
             }
             .sponsorship-content {
                 margin-top: 23px;
@@ -428,12 +375,7 @@
                     margin-bottom: 47px;
                     width: 100%;
                     max-width: 696px;
-                    font-family: 'Rubik', sans-serif;
-                    font-weight: 700;
-                    font-size: 3.5rem;
-                    line-height: 4.2rem;
-                    letter-spacing: -1%;
-                    color: $primary-dark;
+                    @include font-utils('Rubik', 700, 3.5rem, 4.2rem, -1%, $primary-dark);
                 }
                 .dowload-app {
                     @include flex-utils(flex, row, center, start);
@@ -446,28 +388,16 @@
                         border-radius: 8px;
                         padding: 12px 23px;
                         span {
-                            font-family: 'Rubik', sans-serif;
-                            font-weight: 400;
-                            font-size: 0.75rem;
-                            line-height: 0.889rem;
-                            color: $white;
+                            @include font-utils('Rubik', 400, 0.785rem, 0.889rem, none, $white);
                             margin-bottom: 2px;
                         }
                         p {
-                            font-family: 'Rubik', sans-serif;
-                            font-weight: 700;
-                            font-size: 1rem;
-                            line-height: 1.185rem;
-                            color: $white;
+                            @include font-utils('Rubik', 700, 1rem, 1.185rem, none, $white);
                         }
                     }
                 }
                 p {
-                   font-family: 'Rubik', sans-serif;
-                   font-weight: 400;
-                   font-size: 1.125rem; 
-                   line-height: 1.688rem;
-                   color: $gray-muted;
+                    @include font-utils('Rubik', 400, 1.125rem, 1.688rem, none, $gray-muted);
                 }
             }
             .right-mockup {
@@ -554,26 +484,17 @@
             .left-texts {
                 width: 100%;
                 .span-gray {
-                    font-family: 'Poppins', sans-serif;
-                    font-weight: 500;
-                    font-size: 0.813rem;
-                    line-height: 1.219rem;
-                    letter-spacing: 16%;
+                    @include font-utils('Poppins', 500, 0.813rem, 1.219rem, 16%, $gray-muted);
                     padding: 5px 20px;
                     border-radius: 120px;
                     background-color: $gray-lighting;
-                    color: $gray-muted;
                 }
                 h1 {
                     margin-top: 25px;
                     margin-bottom: 44px;
                     width: 100%;
                     max-width: 592px;
-                    font-family: 'Poppins', sans-serif;
-                    font-weight: 700;
-                    font-size: 3rem;
-                    line-height: 3.9rem;
-                    color: $primary-dark;
+                    @include font-utils('Poppins', 700, 3rem, 3.9rem, none, $primary-dark);
                 }
                 ul {
                     @include flex-utils(flex, column, start, center);
@@ -590,12 +511,7 @@
                             border: 1px solid $gray-secondary;
                         }
                         p {
-                            font-family: 'Poppins', sans-serif;
-                            font-weight: 400;
-                            font-size: 1rem;
-                            line-height: 1.5rem;
-                            letter-spacing: -0.5%;
-                            color: $gray-muted;
+                            @include font-utils('Poppins', 400, 1rem, 1.5rem, -0.5%, $gray-muted);
                         }
                     }
                 }
@@ -610,19 +526,11 @@
                         border-radius: 8px;
                         padding: 12px 23px;
                         span {
-                            font-family: 'Rubik', sans-serif;
-                            font-weight: 400;
-                            font-size: 0.75rem;
-                            line-height: 0.889rem;
-                            color: $white;
+                            @include font-utils('Rubik', 400, 0.75rem, 0.889rem, none, $white);
                             margin-bottom: 2px;
                         }
                         p {
-                            font-family: 'Rubik', sans-serif;
-                            font-weight: 700;
-                            font-size: 1rem;
-                            line-height: 1.185rem;
-                            color: $white;
+                            @include font-utils('Rubik', 700, 1rem, 1.185rem, none, $white);
                         }
                     }
                 }
@@ -665,6 +573,123 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+.wireframes-6 {
+    .container {
+        .hero-content {
+            @include flex-utils(flex, row, center, space-between);
+            .left-content {
+                span {
+                    @include font-utils('Open Sans', 400, 1rem, 1.5rem, none, $gray-medium);
+                    margin-bottom: 22px;
+                }
+                h1 {
+                    width: 100%;
+                    max-width: 709px;
+                    @include font-utils('PT Sans', 400, 4rem, 5rem, -2%, $white);
+                    margin-bottom: 44px;
+                }
+                .input-content {
+                    @include flex-utils(flex, row, center, space-between);
+                    gap: 42px;
+                    width: 100%;
+                    max-width: 489px;
+                    background-color: $gray-muted;
+                    border-radius:  7px;
+                    padding: 13px 16px 14px 23px;
+                    margin-bottom: 46px;
+                    input {
+                        @include font-utils('Open Sans', 400, 1rem, 1.362rem, none, $gray-light);
+                        background-color: transparent;
+                        border: transparent;
+                        &::placeholder {
+                            @include font-utils('Open Sans', 400, 1rem, 1.362rem, none, $gray-light);
+                        }
+                    }
+                    button {
+                        @include font-utils('PT Sans', 700, 0.938rem, 1.213rem, -1%, $primary-dark);
+                        padding: 13px 23.30px;
+                        background-color: $gray-light;
+                        border-radius: 5px;
+                    }
+                }
+                .group-info {
+                    @include flex-utils(flex, row, center, start);
+                    gap: 18px;
+                    .circle-gray-border {
+                        @include flex-utils(flex, row, center, center);
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                        border: 1px solid $gray-middle;
+                    }
+                    p {
+                        @include font-utils('Open Sans', 400, 1rem, 1.5rem, none, $gray-medium);
+                    }
+                }
+            }
+        }
+    }
+    .sponsors {
+        @include flex-utils(flex, row, center, space-between);
+        margin-top: 195px;
+        .sponsor-content {
+            @include flex-utils(flex, row, center, space-between);
+            padding: 46px 75px 46px 1.5rem;
+            border-radius: 8px 8px 0 0;
+            width: 100%;
+            background-color: $white;
+        }
+        .arrow-content {
+            width: 100%;
+            max-width: 216px;
+            padding-right: 1.5rem;
+            @include flex-utils(flex, row, center, center);
+        }
+    }
+    @include responsivo('tablet') {
+        .container {
+            .hero-content {
+                @include flex-utils(flex, column, center, center);
+                .left-content {
+                    @include flex-utils(flex, column, center, center);
+                    text-align: center;
+                }
+            }
+        }
+        .sponsors {
+            margin-top: 0;
+            @include flex-utils(flex, column-reverse, center, center);
+            gap: 37px;
+            .sponsor-content {
+                padding: 46px 1.25rem;
+                img:nth-of-type(n+5) {
+                    display: none;
+                }
+            }
+        }
+    }
+    @include responsivo('mobile') {
+        .hero-content {
+            .left-content {
+                h1 {
+                    font-size: 2.5rem;
+                    line-height: 3rem;
+                }
+                .input-content {
+                    display: none;
+                }
+            }
+        }
+        .sponsors {
+            .sponsor-content {
+                img:nth-of-type(n+4) {
+                    display: none;
                 }
             }
         }
