@@ -304,6 +304,7 @@
 }
 
 .wireframes-6 {
+    display: none;
     background-color: $primary-medium;
     .container {
         header {
@@ -350,6 +351,233 @@
                 }
                 .menu {
                     display: block;
+                }
+            }
+        }
+    }
+}
+
+.wireframes-7 {
+    display: none;
+    .container {
+        header {
+            @include flex-utils(flex, row, center, space-between);
+            padding: 20px 0;
+            margin-bottom: 99px;
+            .m-l-content {
+                .menu {
+                    display: none;
+                }
+                .logo {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 19.30px;
+                    span {
+                        @include font-utils('Roboto', 700, 1rem, auto, none, $primary-darker);
+                    }
+                }
+            }
+            ul {
+                @include flex-utils(flex, row, center, center);
+                gap: 56px;
+                li {
+                    a {
+                        @include font-utils('Fira Sans', 400, 0.875rem, 1.05rem, none, $primary-dark);
+                    }
+                }
+            }
+            .actions {
+                @include flex-utils(flex, row, center, center);
+                gap: 25px;
+                a {
+                    @include font-utils('Fira Sans', 700, 0.875rem, 1.05rem, none, $primary-dark);
+                }
+                button {
+                    background-color: $gray-muted;
+                    padding: 8px 20px;
+                    border-radius: 120px;
+                    @include font-utils('Fira Sans', 500, 0.875rem, 1.05rem, none, $white);
+                }
+            }
+        }
+    }
+    @include responsivo('tablet') {
+        .container {
+            header {
+                .m-l-content {
+                    @include flex-utils(flex, row, center, center);
+                    .menu {
+                        display: block;
+                        margin-right: 28px;
+                    }
+                }
+                ul {
+                    display: none;
+                }
+                .actions {
+                    a {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.wireframes-8 {
+    background: $gray-gradient-bg-8;
+    header {
+        background-color: $white;
+        padding: 23px 0;
+        margin-bottom: 113px;
+        .container {
+            @include flex-utils(flex, row, center, space-between);
+            .logo {
+                @include flex-utils(flex, row, center, center);
+                gap: 19.30px;
+                span {
+                    @include font-utils('Roboto', 700, 1rem, auto, none, $primary-dark);
+                }
+            }
+            nav {
+                ul {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 56px;
+                    li {
+                        a {
+                            @include font-utils('Fira Sans', 400, 0.875rem, 1.05rem, none, $primary-dark);
+                        }
+                    }
+                    .menu {
+                        margin-left: 24px;
+                    }
+                }
+            }
+        }
+    }
+    @include responsivo('tablet') {
+        header {
+            .container {
+                nav {
+                    ul {
+                        li {
+                            display: none;
+                        }
+                        .menu {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.wireframes-9 {
+    display: none;
+    margin-bottom: 73px;
+    .container {
+        header {
+            padding: 36px 0;
+            @include flex-utils(flex, row, center, space-between);
+            .logo-content {
+                @include flex-utils(flex, row, center, center);
+                gap: 48px;
+                .menu {
+                    display: none;
+                }
+                a {
+                    @include font-utils('Source Sans Pro', 400, 1rem, 1.257rem, -1%, $primary-dark);
+                }
+            }
+            .btns {
+                @include flex-utils(flex, row, center, center);
+                gap: 34px;
+                button {
+                    @include font-utils('Source Sans Pro', 400, 0.938rem, 1.179rem, -1%, $primary-dark);
+                    padding: 10px 20px;
+                    background-color: transparent;
+                    border: 1px solid $gray-medium;
+                    border-radius: 8px;
+                }
+                .fill-insta {
+                    @include flex-utils(flex, row, center, center);
+                    padding: 12px 11px;
+                    background-color: $gray-lighting;
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+    @include responsivo('tablet') {
+        .container {
+            header {
+                .logo-content {
+                    gap: 26px;
+                    .menu {
+                        display: block;
+                    }
+                    a {
+                        display: none;
+                    }
+                }
+                .btns {
+                    .fill-insta {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.wireframes-10 {
+    background-color: $primary-darker;
+    .container {
+        header {
+            @include flex-utils(flex, row, center, space-between);
+            padding: 20px 0;
+            margin-bottom: 105px;
+            nav {
+                @include flex-utils(flex, row, center, center);
+                gap: 49px;
+                ul {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 40px;
+                    li {
+                        a {
+                            @include font-utils('Barlow', 500, 0.875rem, 1.313rem, 3%, $white);
+                        }
+                    }
+                }
+            }
+            .contact-menu {
+                @include flex-utils(flex, row, center, center);
+                gap: 54px;
+                .insta {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 16px;
+                    span {
+                        @include font-utils('Barlow', 500, 0.875rem, 1.313rem, 3%, $white);
+                    }
+                }
+            }
+        }
+    }
+    @include responsivo('tablet') {
+        .container {
+            header {
+                margin-bottom: 25px;
+                nav {
+                    ul {
+                        display: none;
+                    }
+                }
+                .contact-menu {
+                    .insta {
+                        span {
+                            display: none;
+                        }
+                    }
                 }
             }
         }

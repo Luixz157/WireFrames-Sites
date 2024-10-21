@@ -12,7 +12,13 @@ $gray-lighting: #F1F0F5;
 $white: #FFFFFF;           
 $black: #000000;           
 
-// Opacidades de Cores
+// Opacity Colors
 
 $gray-secondary-op50: hsla(249, 6%, 57%, 0.500);  
 $gray-lighting-op80: hsla(252, 20%, 95%, 0.8); 
+$gray-muted-op10: hsla(252, 6%, 50%, 0.102);
+$white-op65: hsla(0, 0%, 100%, 0.650);
+
+// Gradient Colors
+
+$gray-gradient-bg-8: linear-gradient(180deg, rgba(78,75,89,1) 99%, rgba(78,75,89,0) 100%);

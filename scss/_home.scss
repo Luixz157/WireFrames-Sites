@@ -695,3 +695,487 @@
         }
     }
 }
+
+.wireframes-7 {
+    .container {
+        .hero-content {
+            @include flex-utils(flex, column, center, center);
+            h1 {
+                @include font-utils('Fira Sans', 700, 3rem, 3.6rem, -2%, $primary-medium);
+                width: 100%;
+                max-width: 863px;
+                text-align: center;
+                margin-bottom: 26px;
+            }
+            p {
+                @include font-utils('Mukita', 400, 1.125rem, 1.87rem, none, $primary-dark);
+                margin-bottom: 36px;
+            }
+            .button-content {
+                @include flex-utils(flex, row, center, center);
+                gap: 16px;
+                margin-bottom: 81px;
+                .btn-1 {
+                    background-color: $primary-medium;
+                    padding: 11px 32px;
+                    border-radius: 120px;
+                    @include font-utils('Fira Sans', 500, 0.875rem, 1.05rem, none, $white);
+                }
+                .btn-2 {
+                    background-color: transparent;
+                    border: 1px solid $gray-medium;
+                    padding: 11px 32px;
+                    border-radius: 120px;
+                    @include font-utils('Fira Sans', 500, 0.875rem, 1.05rem, none, $gray-muted);
+                }
+            }
+        }
+    }
+    @include responsivo('mobile') {
+        .container {
+            .hero-content {
+                h1 {
+                    font-size: 1.75rem;
+                    line-height: 2.1rem;
+                }
+            }
+        }
+    }
+}
+
+.wireframes-8 {
+    display: none;
+    .container {
+        .homing {
+            @include flex-utils(flex, row, center, space-between);
+            .home-left {
+                width: 100%;
+                span {
+                    @include font-utils('IBM Plex Sans', 300, 2.5rem, 2.5rem, -1%, $white);
+                    margin-bottom: 15px;
+                }
+                h1 {
+                    @include font-utils('IBM Plex Sans', 700, 5.5rem, 5.5rem, -2%, $gray-middle);
+                    margin-bottom: 64px;
+                }
+                .itens {
+                    @include flex-utils(flex, row, center, start);
+                    gap: 26px;
+                    li {
+                        @include flex-utils(flex, column, center, center);
+                        width: 100%;
+                        max-width: 145px;
+                        padding: 43px 30px 35px 30px;
+                        background-color: $primary-dark;
+                        transition: all .3s ease;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        .circle-gray-border {
+                            @include flex-utils(flex, row, center, center);
+                            width: 40px;
+                            height: 40px;
+                            background-color: transparent;
+                            border: 1px solid $white;
+                            border-radius: 50%;
+                            margin-bottom: 31px;
+                        }
+                        p {
+                            @include font-utils('Noto Sans', 400, 0.775rem, 1.192rem, none, $white);
+                        }
+                        &:hover {
+                            background-color: $white;
+                            p {
+                                color: $primary-medium;
+                            }
+                            .circle-gray-border {
+                                border: 1px solid $primary-dark;
+                            }
+                        }
+                    }
+                }
+            }
+            .home-right {
+                width: 100%;
+                @include flex-utils(flex, row, center, space-between);
+                p {
+                    @include font-utils('IMB Ples Sans', 400, 1.125rem, 1.553rem, none, $white);
+                    width: 100%;
+                    max-width: 154px;
+                    text-align: right;
+                }
+            }
+        }
+    }
+    .white-div {
+        background-color: $white;
+        width: 100%;
+        height: 145px;
+        .container {
+            .steps {
+                box-shadow: 0 0 40px 0 $gray-muted-op10;
+                position: relative;
+                bottom: 69px;
+                @include flex-utils(flex, row, center, space-between);
+                padding: 40px 86px 42px 46px;
+                background-color: $white;
+                border-radius: 6px;
+                li {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    @include flex-utils(flex, row, center, center);
+                    gap: 21px; 
+                    &:not(:last-child)::after {
+                        content: '....';  // Aqui estão os três pontinhos
+                        position: absolute;
+                        right: 0;
+                        transform: rotate(90deg);
+                        color: $gray-medium;
+                        font-size: 2.5rem;
+                    }
+                
+                    .texts {
+                        @include flex-utils(flex, column, start, start);
+                        gap: 8px;
+                
+                        h4 {
+                            @include font-utils('IBM Plex Sans', 400, 1.125rem, 1.125rem, -2%, $primary-dark);
+                        }
+                
+                        p {
+                            @include font-utils('IBM Plex Sans', 400, 0.938rem, 0.938rem, -1%, $gray-secondary);
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+    @include responsivo('tablet') {
+        .container {
+            .homing {
+                @include flex-utils(flex, column, center, center);
+                .home-left {
+                    @include flex-utils(flex, column, center, center);
+                    text-align: center;
+                    margin-bottom: 34px;
+                    .itens {
+                        gap: 5px;
+                        li {
+                            &:last-child {
+                                .circle-gray-border {
+                                    margin-bottom: 10px
+                                }
+                            }
+                        }
+                    }
+                }
+                .home-right {
+                    @include flex-utils(flex, column, center, center);
+                    position: relative;
+                    p {
+                        width: 100%;
+                        max-width: 240px;
+                        text-align: center;
+                        position: absolute;
+                        bottom: 99px;
+                        font-size: 1rem;
+                        line-height: 1.38rem;
+                    }
+                }
+            }
+        }
+        .white-div {
+            width: auto;
+            .container {
+                .steps {
+                    @include flex-utils(flex, column, center, start);
+                    gap: 59px;
+                    li {
+                        &:not(:last-child)::after {
+                            right: auto;
+                            bottom: -40px;
+                            transform: rotate(0deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.wireframes-9 {
+    .container {
+        .home {
+            @include flex-utils(flex, row, center, space-between);
+            .left-texts {
+                @include flex-utils(flex, column, start, center);
+                width: 100%;
+                h1 {
+                    @include font-utils('Asap', 400, 3.5rem, 3.92rem, none, $primary-medium);
+                    width: 100%;
+                    max-width: 704px;
+                    margin-bottom: 24px;
+                    span {
+                        font-weight: 700;
+                    }
+                }
+                .p-home {
+                    @include font-utils('Source Sans Pro', 400, 1.125rem, 1.688rem, -1%, $gray-muted);
+                    margin-bottom: 58px;
+                }
+                .content-apps {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 50px;
+                    margin-bottom: 102px;
+                    .div-app {
+                        @include flex-utils(flex, row, center, center);
+                        gap: 14px;
+                        border: 1.5px solid $gray-middle;
+                        padding: 13px 32px 15px 25px;
+                        border-radius: 8px;
+                        .texts {
+                            span {
+                                @include font-utils('Asap', 400, 0.75rem, 0.859rem, none, $gray-muted);
+                            }
+                            h5 {
+                                @include font-utils('Asap', 700, 1rem, 1.146rem, none, $gray-muted);
+                            }
+                        }
+                    }
+                    .info {
+                        @include flex-utils(flex, row, center, center);
+                        gap: 11px;
+                        .gray-circle {
+                            @include flex-utils(flex, row, center, center);
+                            width: 20px;
+                            height: 20px;
+                            border-radius: 50%;
+                            background-color: $gray-light;
+                        }
+                        p {
+                            @include font-utils('Source Sans Pro', 500, 1rem, 1.5rem, -1%, $primary-dark);
+                        }
+                    }
+                }
+            }
+            .right-mockup {
+                @include flex-utils(flex, row, center, center);
+                width: 100%;
+            }
+        }
+
+        .about-steps {
+            @include flex-utils(flex, row, center, space-between);
+            margin-top: 89px;
+            border: 1px solid $gray-light;
+            border-radius: 12px;
+            padding: 40px 82px 65px 65px;
+            li {
+                @include flex-utils(flex, row, center, start);
+                gap: 16px;
+                .circle-gray {
+                    @include flex-utils(flex, row, center, center);
+                    width: 61px;
+                    height: 61px;
+                    border-radius: 50%;
+                    background-color: $gray-light;
+                }
+                .texts {
+                    h4 {
+                        @include font-utils('Asap', 600, 1.125rem, 1.125rem, -2%, $primary-dark);
+                        margin-bottom: 8px;
+                    }
+                    p {
+                        @include font-utils('Source Sans Pro', 400, 1rem, 1rem, -1%, $gray-secondary);
+                    }
+                }
+            }
+        }
+    }
+    @include responsivo('tablet') {
+        .container {
+            .home {
+                @include flex-utils(flex, column, center, center);
+                .left-texts {
+                    @include flex-utils(flex, column, center, center);
+                    text-align: center;
+                    .content-apps {
+                        margin-bottom: 48px;
+                    }
+                    .icon-mouse {
+                        display: none;
+                    }
+                }
+            }
+            .about-steps {
+                @include flex-utils(flex, column, center, center);
+                gap: 39px;
+                margin-top: 0;
+            }
+        }
+    }
+    @include responsivo('mobile') {
+        .home {
+            @include flex-utils(flex, column, center, center);
+            .left-texts {
+                h1 {
+                    font-size: 2rem;
+                    line-height: 2.24rem;
+                }
+            }
+        }
+        .container {
+            .about-steps {
+                @include flex-utils(flex, column, start, center);
+            }
+        }
+    }
+}
+
+.wireframes-10 {
+    .container {
+        .home {
+            @include flex-utils(flex, row, center, space-between);
+            .left-home {
+                @include flex-utils(flex, column, start, center);
+                .span-gray {
+                    @include font-utils('Barlow Condensed', 700, 0.875rem, 1.313rem, 16%, $white-op65);
+                    margin-bottom: 6px;
+                }
+                h1 {
+                    @include font-utils('Barlow', 700, 3.5rem, 4.375rem, none, $white);
+                    margin-bottom: 19px;
+                    width: 100%;
+                    max-width: 647px;
+                }
+                p {
+                    @include font-utils('Barlow', 400, 1.125rem, 1.688rem, -1%, $gray-medium);
+                    margin-bottom: 67px;
+                }
+                button {
+                    @include font-utils('Barlow Condensed', 700, 0.938rem, 1.406rem, 6%, $primary-dark);
+                    padding: 14.30px 56px;
+                    background-color: $white;
+                    border-radius: 8px;
+                }
+                ul {
+                    @include flex-utils(flex, row, start, center);
+                    gap: 72px;
+                    margin-top: 110px;
+                    li {
+                        @include flex-utils(flex, column, start, center);
+                        cursor: pointer;
+                        span {
+                            @include font-utils('Barlow', 400, 1rem, 1.5rem, none, $white-op65);
+                            transition: all .3s ease;
+                        }
+                        p {
+                            @include font-utils('Barlow Condensed', 600, 1rem, 1.5rem, none, $white-op65);
+                            transition: all .3s ease;
+                        }
+                        &:hover {
+                            span {
+                                color: $white;
+                            }
+                            p {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+            .right-home {
+                @include flex-utils(flex, row, end, center);
+                .lines-sliders {
+                    position: relative;
+                    right: 23px;
+                    @include flex-utils(flex, row, center, center);
+                    gap: 12px;
+                    margin-bottom: 79px;
+                    cursor: pointer;
+                    .line-active {
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 50%;
+                        background-color: $white;
+                    }
+                    .line {
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 50%;
+                        background-color: $white-op65;
+                        &:hover {
+                            background-color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .white-arrow-closed {
+        position: relative;
+        padding: 76px 0 16px 0;
+        background-color: $white;
+        @include flex-utils(flex, column, center, center);
+        text-align: center;
+        .circle-gray {
+            @include flex-utils(flex, row, center, center);
+            top: -28px;
+            position: absolute;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background-color: $gray-lighting;
+        }
+        .heading {
+            span {
+                @include font-utils('Barlow Condensed', 700, 0.875rem, 1.313rem, 16%, $gray-secondary);
+                margin-bottom: 8px;
+            }
+            h2 {
+                @include font-utils('Barlow', 700, 2rem, 2.5rem, -2%, $gray-medium);
+            }
+        }
+    }    
+    @include responsivo('tablet') {
+        .container {
+            .home {
+                @include flex-utils(flex, column, center, center);
+                .left-home {
+                    @include flex-utils(flex, column, center, center);
+                    text-align: center;
+                }
+                .right-home {
+                    .lines-sliders {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    @include responsivo('mobile') {
+        .container {
+            .home {
+                @include flex-utils(flex, column, center, center);
+                .left-home {
+                    h1 {
+                        font-size: 2rem;
+                        line-height: 2.5rem;
+                    }
+                    ul {
+                        margin-top: 42px;
+                        li {
+                            text-align: left;
+                        }
+                    }
+                }
+                .right-home {
+                    .lines-sliders {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
