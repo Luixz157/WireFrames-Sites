@@ -663,6 +663,7 @@
 }
 
 .wireframes-12 {
+    display: none;
     header {
         padding: 24px 0;
         .container {
@@ -675,11 +676,6 @@
                     gap: 20px;
                     span {
                         @include font-utils('Roboto', 700, 1rem, auto, auto,  $primary-dark);
-                    }
-                    .item {
-                        li {
-
-                        }
                     }
                 }
                 .item {
@@ -741,3 +737,117 @@
     }
 }
 
+.wireframes-13 {
+    display: none;
+    header {
+        padding: 24px 0;
+        border-bottom: 1px solid $gray-middle;
+        background-color: $primary-dark;
+        .container {
+            @include flex-utils(flex, row, center, space-between);
+            .logo {
+                @include flex-utils(flex, row, center, center);
+                gap: 20px;
+                span {
+                    @include font-utils('Roboto', 700, 1rem, auto, auto, $white);
+                }
+            }
+            nav {
+                @include flex-utils(flex, row, center, center);
+                gap: 63px;
+                ul {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 54px;
+                    li {
+                        a {
+                            @include font-utils('Nunito', 400, 0.938rem, 1.279rem, auto, $white);
+                        }
+                    }
+                }
+                a {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 16px;
+                    .circle-gray {
+                        @include flex-utils(flex, row, center, center);
+                        width: 24px;
+                        height: 24px;
+                        background-color: $gray-light;
+                        border-radius: 50%;
+                    }
+                    span {
+                        @include font-utils('Nunito', 600, 0.875rem, 1.194rem, -1%, $white);
+                    }
+                }
+            }
+            .menu {
+                display: none;
+            }
+        }
+    }
+    @include responsivo('tablet') {
+        header {
+            .container {
+                nav {
+                    display: none;
+                }
+                .menu {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.wireframes-14 {
+    display: none;
+    header {
+        padding: 32px 0;
+        background-color: $primary-dark;
+        .container {
+            @include flex-utils(flex, row, center, space-between);
+            .logo {
+                @include flex-utils(flex, row, center, center);
+                gap: 20px;
+                span {
+                    @include font-utils('Roboto', 700, 1rem, auto, auto, $white)
+                }
+            }
+            .nav {
+                @include flex-utils(flex, row, center, center);
+                gap: 56px;
+                li {
+                    a {
+                        @include font-utils('ABeeZee', 400, 0.938rem, 1.108rem, auto, $white)
+                    }
+                }
+            }
+            .actions {
+                button {
+                    @include font-utils('ABeeZee', 400, 0.938rem, 1.108rem, -1%, $white);
+                    padding: 13.30px 35.30px;
+                    border: 1px solid $white;
+                    border-radius: 5px;
+                }
+                .menu {
+                    display: none;
+                }
+            }
+        }
+    }
+    @include responsivo('tablet') {
+        header {
+            .container {
+                .nav {
+                    display: none;
+                }
+                .actions {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 38px;
+                    .menu {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
