@@ -237,7 +237,7 @@
                 background-color: $white;
                 padding: 0 36px 37px 39px;
                 border-radius: 8px;
-                box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.245);
+                box-shadow: 0px 4px 4px 0 $gray-muted-op10;
                 img {
                     width: 100%;
                     position: relative;
@@ -1173,6 +1173,236 @@
                 .right-home {
                     .lines-sliders {
                         display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.wireframes-11 {
+    .homing-content {
+        position: relative;
+        background-color: $primary-dark;
+        padding-top: 88px;
+        padding-bottom: 160px;
+        .container {
+            @include flex-utils(flex, row, center, space-between);
+            z-index: 2;
+            .homing-left {
+                @include flex-utils(flex, column, start, center);
+                width: 100%;
+                padding-right: 71px;
+                .locate {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 16px;
+                    margin-bottom: 16px;
+                    span {
+                        @include font-utils('Mulish', 400, 1.125rem, 1.412rem, -1%, $gray-light);
+                    }
+                }
+                h1 {
+                    @include font-utils('Mulish', 800, 4.5rem, 5.648rem, auto, $white);
+                    margin-bottom: 24px;
+                    width: 100%;
+                    max-width: 518px;
+                }
+                .infos {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 37px;
+                    margin-bottom: 81px;
+                    li {
+                        @include flex-utils(flex, row, center, center);
+                        gap: 12px;
+                        span {
+                            @include font-utils('Roboto', 400, 1rem, 1.172rem, -1%, $white);
+                        }
+                    }
+                }
+                .content-btn {
+                    width: 100%;
+                    @include flex-utils(flex, row, center, space-between);
+                    button {
+                        @include font-utils('Mulish', 700, 0.938rem, 1.177rem, auto, $primary-dark);
+                        padding: 17px 42px;
+                        background-color: $white;
+                        border-radius: 8px;
+                    }
+                    .arrows {
+                        @include flex-utils(flex, row, center, center);
+                        gap: 32px;
+                    }
+                }
+            }
+            .homing-right {
+                @include flex-utils(flex, column, center, center);
+                width: 100%;
+                .mockup-big {
+                    margin-bottom: 138px
+                }
+                .mockups {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 24px;
+                    margin-left: 50%;
+                    .retangle-active {
+                        @include flex-utils(flex, row, center, center);
+                        width: 64px;
+                        height: 64px;
+                        border-radius: 6px;
+                        background-color: $gray-secondary;
+                    }
+                    .retangle {
+                        @include flex-utils(flex, row, center, center);
+                        width: 64px;
+                        height: 64px;
+                        border-radius: 6px;
+                        background-color: $gray-muted;
+                    }
+                }
+            }
+        }
+        .fifth-bg-gray {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            width: 50%;
+            height: 100%;
+            background-color: $primary-medium;
+        }
+    }
+    
+    .white-div {
+        background-color: $white;
+        z-index: 3;
+        width: 100%;
+        height: 175px;
+        .container {
+            .div-white-content {
+                background-color: $white;
+                z-index: 3;
+                position: relative;
+                top: -61px;
+                padding: 32px;
+                box-shadow: 0 0 40px 0 $gray-muted-op10;
+                border-radius: 6px;
+                @include flex-utils(flex, row, center, space-between);
+                li {
+                    @include flex-utils(flex, row, center, space-between);
+                    gap: 16px;
+                    span {
+                        @include font-utils('Roboto', 400, 1rem, 1.172rem, auto, $gray-secondary);
+                    }
+                    button {
+                        @include font-utils('Mulish', 700, 0.938rem, 1.177rem, auto, $white);
+                        padding: 13.30px 38px;
+                        background-color: $primary-dark;
+                        border-radius: 8px;
+                    }
+                    .lines-sliders {
+                        display: none;
+                    }
+                }
+            }
+            .forms {
+                display: none
+            }
+        }
+    }
+
+    @include responsivo('tablet') {
+        .homing-content {
+            padding-bottom: 260px;
+            .container {
+                @include flex-utils(flex, column, center, center);
+                .homing-left {
+                    @include flex-utils(flex, column, center, center);
+                    text-align: center;
+                    padding-right: 0px;
+                    .content-btn {
+                        @include flex-utils(flex, column, center, center);
+                        gap: 42px;
+                        .lines-sliders {
+                            position: relative;
+                            @include flex-utils(flex, row, center, center);
+                            gap: 12px;
+                            cursor: pointer;
+                            .line-active {
+                                width: 7px;
+                                height: 7px;
+                                border-radius: 50%;
+                                background-color: $white;
+                            }
+                            .line {
+                                width: 7px;
+                                height: 7px;
+                                border-radius: 50%;
+                                background-color: $white-op65;
+                                &:hover {
+                                    background-color: $white;
+                                }
+                            }
+                        }
+                        .arrows {
+                            display: none;
+                        }
+                    }
+                }
+                .homing-right {
+                    display: none;
+                }
+            }
+            .fifth-bg-gray {
+                display: none;
+            }
+        }
+
+        .white-div {
+            .container {
+                background-color: transparent;
+                .div-white-content {
+                    display: none;
+                }
+                .forms {
+                    @include flex-utils(flex, column, center, center);
+                    gap: 15px;
+                    position: relative;
+                    top: -170px;
+                    background-color: $white;
+                    border-radius: 6px;
+                    padding: 23px;
+                    box-shadow: 0px 4px 4px 0 $gray-muted-op10;
+                    .content-border-gray {
+                        @include flex-utils(flex, row, center, center);
+                        @include font-utils('Mulish', 400, 0.875rem, 1.053rem, auto, $gray-secondary);
+                        gap: 16px;
+                        width: 100%;
+                        padding: 20px 17px;
+                        border: 1px solid $gray-light;
+                        border-radius: 8px
+                    }
+                    ul {
+                        @include flex-utils(flex, row, center, center);
+                        gap: 12px;
+                        width: 100%;
+                        li {
+                            @include flex-utils(flex, row, center, center);
+                            @include font-utils('Mulish', 400, 0.875rem, 1.053rem, auto, $gray-secondary);
+                            gap: 16px;
+                            width: 100%;
+                            padding: 20px 17px;
+                            border: 1px solid $gray-light;
+                            border-radius: 8px
+                        }
+                    }
+                    button {
+                        @include flex-utils(flex, row, center, center);
+                        @include font-utils('Mulish', 700, 0.938rem, 1.177rem, auto, $white);
+                        width: 100%;
+                        padding: 17px 0;
+                        background-color: $primary-dark;
+                        border-radius: 8px;
+                        
                     }
                 }
             }

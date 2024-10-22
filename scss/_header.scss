@@ -531,6 +531,7 @@
 }
 
 .wireframes-10 {
+    display: none;
     background-color: $primary-darker;
     .container {
         header {
@@ -583,3 +584,80 @@
         }
     }
 }
+
+.wireframes-11 {
+    header {
+        background-color: $white;
+        padding: 24px 0;
+        .container {
+            @include flex-utils(flex, row, center, space-between);
+            .h-left {
+                @include flex-utils(flex, row, center, space-between);
+                gap: 75px;
+                width: 100%;
+                border-right: 1px solid $gray-light;
+                .logo {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 20px;
+                    span {
+                        @include font-utils('Roboto', 700, 1rem, auto, auto, $primary-dark);
+                    }
+                }
+                ul {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 48px;
+                    margin-right: 136px;
+                    li {
+                        a {
+                            @include font-utils('Mulish', 400, 0.875rem, 1.313rem, auto, $gray-muted);
+                        }
+                    }
+                }
+            }
+            .h-right {
+                @include flex-utils(flex, row, center, space-between);
+                width: 100%;
+                .search {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 22px;
+                    margin-left: 40px;
+                    a {
+                        @include font-utils('Mulish', 400, 0.875rem, 1.313rem, auto, $gray-muted);
+                    }
+                }
+                .menu {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 43px;
+                    a {
+                        @include font-utils('Mulish', 400, 0.875rem, 1.313rem, auto, $gray-muted);
+                    }
+                }
+            }
+        }
+    }
+    @include responsivo('tablet') {
+        header {
+            .container {
+                .h-left {
+                    border-right: none;
+                    ul {
+                        display: none;
+                    }
+                }
+                .h-right {
+                    .search {
+                        a {
+                            display: none;
+                        }
+                    }
+                    .menu {
+                        a {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
