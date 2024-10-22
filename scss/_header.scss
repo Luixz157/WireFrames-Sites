@@ -586,6 +586,7 @@
 }
 
 .wireframes-11 {
+    display: none;
     header {
         background-color: $white;
         padding: 24px 0;
@@ -654,6 +655,85 @@
                         a {
                             display: none;
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.wireframes-12 {
+    header {
+        padding: 24px 0;
+        .container {
+            @include flex-utils(flex, row, center, space-between);
+            .log-itens { 
+                @include flex-utils(flex, row, center, center);
+                gap: 125px;
+                .logo {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 20px;
+                    span {
+                        @include font-utils('Roboto', 700, 1rem, auto, auto,  $primary-dark);
+                    }
+                    .item {
+                        li {
+
+                        }
+                    }
+                }
+                .item {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 56px;
+                    li {
+                        a {
+                            @include font-utils('Assistant', 400, 1rem, 1.5rem, auto, $primary-dark);
+                        }
+                    }
+                }
+            }
+            .sear-menu {
+                @include flex-utils(flex, row, center, center);
+                gap: 84px;
+                .search {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 22px;
+                    span {
+                        @include font-utils('Assistant', 400, 1rem, 1.308rem, auto, $gray-secondary);
+                    }
+                }
+            }
+        }
+    }
+    @include responsivo('tablet') {
+        header {
+            .container {
+                .log-itens {
+                    .item {
+                        display: none;
+                    }
+                }
+                .sear-menu {
+                    .search {
+                        position: relative;
+                        width: 100%;
+                        img {
+                            margin-right: 25px;
+                        }
+                        span {
+                            display: none;
+                        }
+                        &::after {
+                            content: " ";
+                            position: absolute;
+                            right: 0;
+                            width: 1px;
+                            height: 20px;
+                            background-color: $gray-lighting;
+                        }
+                    }
+                    .menu {
+                        width: 100%;
                     }
                 }
             }

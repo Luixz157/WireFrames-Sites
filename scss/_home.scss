@@ -1288,8 +1288,10 @@
                 border-radius: 6px;
                 @include flex-utils(flex, row, center, space-between);
                 li {
-                    @include flex-utils(flex, row, center, space-between);
+                    @include flex-utils(flex, row, center, center);
                     gap: 16px;
+                    width: 100%;
+                    position: relative;
                     span {
                         @include font-utils('Roboto', 400, 1rem, 1.172rem, auto, $gray-secondary);
                     }
@@ -1301,6 +1303,14 @@
                     }
                     .lines-sliders {
                         display: none;
+                    }
+                    &:not(:nth-child(n+4))::after {
+                        position: absolute;
+                        right: 0;
+                        content: " ";
+                        width: 1.5px;
+                        height: 48px;
+                        background-color: $gray-light;
                     }
                 }
             }
@@ -1403,6 +1413,136 @@
                         background-color: $primary-dark;
                         border-radius: 8px;
                         
+                    }
+                }
+            }
+        }
+    }
+}
+
+.wireframes-12 {
+    .home {
+        @include flex-utils(flex, column, center, center);
+        background-color: $primary-dark;
+        .top-home {
+            @include flex-utils(flex, row, center, center);
+            padding: 86px 0 124px 0;
+        }
+    }
+    .bottom-home {
+        padding-bottom: 59px;
+        .container {
+            @include flex-utils(flex, row, center, space-between);
+            .left-bottom {
+                @include flex-utils(flex, column, start, center);
+                width: 100%;
+                h1 {
+                    @include font-utils('Assistant', 700, 3rem, 3.75rem, auto, $primary-medium);
+                    margin-bottom: 15px
+                }
+                .locate {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 13.30px;
+                    margin-bottom: 42px;
+                    span {
+                        @include font-utils('Roboto', 400, 1.125rem, 1.318rem, -1%, $gray-muted);
+                    }
+                }
+                .value-stars {
+                    @include flex-utils(flex, row, center, center);
+                    gap: 36px;
+                    margin-bottom: 31px;
+                    button {
+                        @include font-utils('Assistant', 600, 1.5rem, 1.875rem, -1%, $primary-dark);
+                        padding: 17px 44px;
+                        background-color: $gray-lighting;
+                    }
+                    .star {
+                        @include flex-utils(flex, row, center, center);
+                        gap: 11px;
+                        span {
+                            @include font-utils('Roboto', 400, 0.938rem, 1.406rem, auto, $primary-medium);
+                        }
+                    }
+
+                }
+                p {
+                    @include font-utils('Rubik', 400, 1rem, 1.5rem, auto, $primary-dark);
+                    width: 100%;
+                    max-width: 594px;
+                }
+            }
+            .right-bottom {
+                @include flex-utils(flex, column, center, center);
+                width: 100%;
+                position: relative;
+                .more-details {
+                    @include flex-utils(flex, column, center, center);
+                    position: relative;
+                    top: -72px;
+                    background-color: $white;
+                    box-shadow: 0px 10px 50px 0 $gray-muted-op10;
+                    width: 100%;
+                    max-width: 384px;
+                    .heading {
+                        @include flex-utils(flex, row, center, space-between);
+                        background-color: $gray-muted;
+                        width: 100%;
+                        padding: 17px 19px 17px 36px;
+                        h4 {
+                            @include font-utils('Assistant', 700, 1.25rem, 1.635rem, auto, $white);
+                        }
+                        .retangle-gray {
+                            @include flex-utils(flex, row, center, center);
+                            width: 38px;
+                            height: 38px;
+                            background-color: $gray-secondary;
+                        }
+                    }
+                    .details {
+                        @include flex-utils(flex, column, start, center);
+                        gap: 34px;
+                        padding: 42px 40px 45px 34px;
+                        li {
+                            @include flex-utils(flex, row, center, center);
+                            gap: 19px;
+                            .circle-gray {
+                                @include flex-utils(flex, row, center, center);
+                                width: 100%;
+                                max-width: 28px;
+                                height: 28px;
+                                border: 1px solid $primary-dark;
+                                border-radius: 50%;
+                            }
+                            p {
+                                @include font-utils('Roboto', 400, 0.938rem, 1.406rem, auto, $gray-muted);
+                            }
+                        }
+                    }
+                    .action {
+                        @include flex-utils(flex, row, center, center);
+                        width: 100%;
+                        border-top: 1px solid $gray-light;
+                        padding: 19px 0 23px 0;
+                        cursor: pointer;
+                        a {
+                            @include font-utils('Assistant', 700, 1rem, 1.308rem, auto, $primary-medium);
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include responsivo('tablet') {
+        .bottom-home {
+            .container {
+                @include flex-utils(flex, column-reverse, center, center);
+                .left-bottom {
+                    @include flex-utils(flex, column, center, center);
+                    text-align: center;
+                    .value-stars {
+                        @include flex-utils(flex, column, center, center);
                     }
                 }
             }
