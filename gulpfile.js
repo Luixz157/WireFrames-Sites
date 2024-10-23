@@ -18,6 +18,10 @@ function compilaSass() {
   .pipe(gulp.dest('css/'))
   .pipe(browserSync.stream());
 }
+// Definindo a tarefa de build
+gulp.task('build', gulp.series('sass', 'plugincss', 'alljs', 'pluginjs'));
+
+
 // tarefa do sass
 gulp.task('sass', compilaSass);
 
