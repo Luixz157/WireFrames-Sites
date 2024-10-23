@@ -1,7 +1,15 @@
+header {
+    z-index: 999;
+}
+
 .wireframes-1 {
+    position: relative;
     display: none;
     .container {
         header {
+            position: sticky;
+            top: 0;
+            background-color: $white;
             display: flex;
             justify-content: space-between;
             padding: 20px 0;
@@ -73,6 +81,9 @@
     display: none;
     .container {
         header {
+            position: sticky;
+            top: 0;
+            background-color: $white;
             padding: 25px 0;
             margin-bottom: 76px;
             @include flex-utils(flex, row, center, space-between);
@@ -127,6 +138,9 @@
     .container {
         header {
             @include flex-utils(flex, row, center, space-between);
+            position: sticky;
+            top: 0;
+            background-color: $primary-medium;
             padding: 20px 0;
             margin-bottom: 69px;
             .head-left {
@@ -193,6 +207,9 @@
     display: none;
     .container {
         header {
+            position: sticky;
+            top: 0;
+            background-color: $white;
             padding: 46px 0;
             margin-bottom: 52px;
             @include flex-utils(flex, row, center, space-between);
@@ -250,6 +267,9 @@
     display: none;
     .container {
         header {
+            position: sticky;
+            top: 0;
+            background-color: $white;
             padding: 46px 0;
             margin-bottom: 52px;
             @include flex-utils(flex, row, center, space-between);
@@ -309,6 +329,9 @@
     .container {
         header {
             @include flex-utils(flex, row, center, space-between);
+            position: sticky;
+            top: 0;
+            background-color: $primary-medium;
             padding: 32px 0;
             margin-bottom: 78px;
             .logo {
@@ -362,6 +385,9 @@
     .container {
         header {
             @include flex-utils(flex, row, center, space-between);
+            position: sticky;
+            top: 0;
+            background-color: $white;
             padding: 20px 0;
             margin-bottom: 99px;
             .m-l-content {
@@ -426,6 +452,8 @@
 .wireframes-8 {
     background: $gray-gradient-bg-8;
     header {
+        position: sticky;
+        top: 0;
         background-color: $white;
         padding: 23px 0;
         margin-bottom: 113px;
@@ -477,6 +505,9 @@
     margin-bottom: 73px;
     .container {
         header {
+            position: sticky;
+            top: 0;
+            background-color: $white;
             padding: 36px 0;
             @include flex-utils(flex, row, center, space-between);
             .logo-content {
@@ -536,6 +567,9 @@
     .container {
         header {
             @include flex-utils(flex, row, center, space-between);
+            position: sticky;
+            top: 0;
+            background-color: $primary-darker;
             padding: 20px 0;
             margin-bottom: 105px;
             nav {
@@ -588,6 +622,8 @@
 .wireframes-11 {
     display: none;
     header {
+        position: sticky;
+        top: 0;
         background-color: $white;
         padding: 24px 0;
         .container {
@@ -665,6 +701,9 @@
 .wireframes-12 {
     display: none;
     header {
+        position: sticky;
+        top: 0;
+        background-color: $white;
         padding: 24px 0;
         .container {
             @include flex-utils(flex, row, center, space-between);
@@ -740,9 +779,11 @@
 .wireframes-13 {
     display: none;
     header {
+        position: sticky;
+        top: 0;
+        background-color: $primary-dark;
         padding: 24px 0;
         border-bottom: 1px solid $gray-middle;
-        background-color: $primary-dark;
         .container {
             @include flex-utils(flex, row, center, space-between);
             .logo {
@@ -802,6 +843,8 @@
     display: none;
     header {
         padding: 32px 0;
+        position: sticky;
+        top: 0;
         background-color: $primary-dark;
         .container {
             @include flex-utils(flex, row, center, space-between);
