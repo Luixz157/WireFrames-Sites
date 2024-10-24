@@ -1,88 +1,80 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const autoprefixer = require('gulp-autoprefixer');
-const browserSync = require('browser-sync').create();
-const concat = require('gulp-concat');
-const babel = require('gulp-babel');
-const uglify = require('gulp-uglify');
+import gulp from 'gulp'; // Usando ESM import
+import sass from 'gulp-sass';
+import dartSass from 'sass';
+import autoprefixer from 'gulp-autoprefixer';
+import browserSync from 'browser-sync';
+import concat from 'gulp-concat';
+import babel from 'gulp-babel';
+import uglify from 'gulp-uglify';
 
+const browser = browserSync.create();
+const sassCompiler = sass(dartSass);
 
-// Compilando o sass, adicionando autoprefixed e dando refresh na pagina
+// Compilando o Sass e adicionando autoprefixer
 function compilaSass() {
   return gulp.src('scss/*.scss')
-  .pipe(sass())
-  .pipe(autoprefixer({
-    overrideBrowserslist: ['last 2 versions'],
-    cascade: false,
-  }))
-  .pipe(gulp.dest('css/'))
-  .pipe(browserSync.stream());
+    .pipe(sassCompiler())
+    .pipe(autoprefixer({
+      overrideBrowserslist: ['last 2 versions'],
+      cascade: false,
+    }))
+    .pipe(gulp.dest('css/'))
+    .pipe(browser.stream());
 }
-// Definindo a tarefa de build
-gulp.task('build', gulp.series('sass', 'plugincss', 'alljs', 'pluginjs'));
 
-
-// tarefa do sass
-gulp.task('sass', compilaSass);
-
+// Concatenando e processando CSS de plugins
 function pluginsCSS() {
   return gulp.src('css/lib/*.css')
-  .pipe(concat('plugins.css'))
-  .pipe(gulp.dest('css/'))
-  .pipe(browserSync.stream())
+    .pipe(concat('plugins.css'))
+    .pipe(gulp.dest('css/'))
+    .pipe(browser.stream());
 }
 
-gulp.task('plugincss', pluginsCSS);
-
+// Concatenando, transpilando e minificando JavaScript
 function gulpJs() {
   return gulp.src('js/scripts/*.js')
-  .pipe(concat('all.js'))
-  .pipe(babel({
+    .pipe(concat('all.js'))
+    .pipe(babel({
       presets: ['@babel/env']
-  }))
-  .pipe(uglify())
-  .pipe(gulp.dest('js/'))
-  .pipe(browserSync.stream());
+    }))
+    .pipe(uglify())
+    .pipe(gulp.dest('js/'))
+    .pipe(browser.stream());
 }
-gulp.task('alljs', gulpJs);
 
+// Concatenando JavaScript de plugins
 function pluginsJs() {
-  return gulp
-  .src(['./js/lib/axios.min.js','./js/lib/aos.min.js','./js/lib/swiper.min.js'])
-  .pipe(concat('plugins.js'))
-  .pipe(gulp.dest('js/'))
-  .pipe(browserSync.stream())
+  return gulp.src(['./js/lib/axios.min.js', './js/lib/aos.min.js', './js/lib/swiper.min.js'])
+    .pipe(concat('plugins.js'))
+    .pipe(gulp.dest('js/'))
+    .pipe(browser.stream());
 }
 
-gulp.task('pluginjs', pluginsJs);
-
-// funcao do browsersync
-function browser() {
-  browserSync.init({
+// Iniciando o servidor com BrowserSync
+function browserSyncServe(cb) {
+  browser.init({
     server: {
       baseDir: './'
     }
-  })
+  });
+  cb();
 }
-//tarefa do browsersync
-gulp.task('browser-sync', browser);
 
-//funcao do watch para alteracoes em scss e html
-function watch() {
+// Observando alterações nos arquivos para recarregar o servidor automaticamente
+function watchFiles() {
   gulp.watch('scss/*.scss', compilaSass);
-
   gulp.watch('css/lib/*.css', pluginsCSS);
-
-  gulp.watch('*.html').on('change', browserSync.reload);
-
-  gulp.watch('js/scripts/*js', gulpJs);
-
+  gulp.watch('*.html').on('change', browser.reload);
+  gulp.watch('js/scripts/*.js', gulpJs);
   gulp.watch('js/lib/*.js', pluginsJs);
 }
-//tarefa do watch
-gulp.task('watch', watch);
 
-// tarefas default que executa o watch e o browsersync
-gulp.task('default', gulp.parallel('watch', 'browser-sync', 'sass', 'plugincss', 'alljs', 'pluginjs'));
+// Definindo tarefas para build e watch
+const build = gulp.series(compilaSass, pluginsCSS, gulpJs, pluginsJs);
+const watch = gulp.parallel(watchFiles, browserSyncServe);
 
-//Lemrar que para ativar necessita escrever no terminal (gulp watch)
+// Exportando as tarefas
+export { build, watch };
+
+// Tarefa default (executada com `npx gulp`)
+gulp.task('default', watch);

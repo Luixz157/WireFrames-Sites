@@ -1,3 +1,7 @@
+@use 'mixins';
+@use 'variables' as *;
+@use 'mixins' as *;
+
 .choice {
     background-color: $black-gray;
     padding-top: 34PX;
@@ -56,14 +60,14 @@
             }
         }
     }
-    @include responsivo('tablet') {
+    @include mixins.responsivo('tablet') {
         .container {
             .content-projects {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
     }
-    @include responsivo('mobile') {
+    @include mixins.responsivo('mobile') {
         .container {
             h1 {
                 font-size: 2rem;
@@ -85,7 +89,7 @@
     display: none;
     position: fixed;
     bottom: 0;
-    z-index: 10;
+    z-index: 999;
     background-color: $black;
     padding: 35px 0;
     .container {
@@ -206,7 +210,7 @@
             }
         }
     }
-    @include responsivo('tablet') {
+    @include mixins.responsivo('tablet') {
         .container {
             .hero-content {
                 .texts-primary {
@@ -298,7 +302,7 @@
             background-color: $gray-secondary;
         }
     }
-    @include responsivo('tablet') {
+    @include mixins.responsivo('tablet') {
         .container {
             .hero-content {
                 text-align: center;
@@ -334,7 +338,7 @@
             }
         }
     }
-    @include responsivo('mobile') {
+    @include mixins.responsivo('mobile') {
         .container {
             .hero-content {
                 .left-content {
@@ -460,7 +464,7 @@
             }
         }
     }
-    @include responsivo('tablet') {
+    @include mixins.responsivo('tablet') {
         .hero-content {
             @include flex-utils(flex, column, center, center);
             text-align: center;
@@ -590,7 +594,7 @@
             }
         }
     }
-    @include responsivo('tablet') {
+    @include mixins.responsivo('tablet') {
         .container {
             .hero-content {
                 @include flex-utils(flex, column, center, center);
@@ -608,7 +612,7 @@
             }
         }
     }
-    @include responsivo('mobile') {
+    @include mixins.responsivo('mobile') {
         .container {
             .hero-content {
                 .left-texts {
@@ -707,7 +711,7 @@
             }
         }
     }
-    @include responsivo('tablet') {
+    @include mixins.responsivo('tablet') {
         .container {
             .hero-content {
                 @include flex-utils(flex, column, center, center);
@@ -719,7 +723,7 @@
         }
 
     }
-    @include responsivo('mobile') {
+    @include mixins.responsivo('mobile') {
         .container {
             .hero-content {
                 .left-texts {
@@ -816,7 +820,7 @@
             @include flex-utils(flex, row, center, center);
         }
     }
-    @include responsivo('tablet') {
+    @include mixins.responsivo('tablet') {
         .container {
             .hero-content {
                 @include flex-utils(flex, column, center, center);
@@ -838,7 +842,7 @@
             }
         }
     }
-    @include responsivo('mobile') {
+    @include mixins.responsivo('mobile') {
         .hero-content {
             .left-content {
                 h1 {
@@ -896,7 +900,7 @@
             }
         }
     }
-    @include responsivo('mobile') {
+    @include mixins.responsivo('mobile') {
         .container {
             .hero-content {
                 h1 {
@@ -1017,7 +1021,7 @@
             }
         }
     }
-    @include responsivo('tablet') {
+    @include mixins.responsivo('tablet') {
         .container {
             .homing {
                 @include flex-utils(flex, column, center, center);
@@ -1160,7 +1164,7 @@
             }
         }
     }
-    @include responsivo('tablet') {
+    @include mixins.responsivo('tablet') {
         .container {
             .home {
                 @include flex-utils(flex, column, center, center);
@@ -1182,7 +1186,7 @@
             }
         }
     }
-    @include responsivo('mobile') {
+    @include mixins.responsivo('mobile') {
         .home {
             @include flex-utils(flex, column, center, center);
             .left-texts {
@@ -1306,7 +1310,7 @@
             }
         }
     }    
-    @include responsivo('tablet') {
+    @include mixins.responsivo('tablet') {
         .container {
             .home {
                 @include flex-utils(flex, column, center, center);
@@ -1322,7 +1326,7 @@
             }
         }
     }
-    @include responsivo('mobile') {
+    @include mixins.responsivo('mobile') {
         .container {
             .home {
                 @include flex-utils(flex, column, center, center);
@@ -1489,7 +1493,7 @@
         }
     }
 
-    @include responsivo('tablet') {
+    @include mixins.responsivo('tablet') {
         .homing-content {
             padding-bottom: 260px;
             .container {
@@ -1704,7 +1708,7 @@
             }
         }
     }
-    @include responsivo('tablet') {
+    @include mixins.responsivo('tablet') {
         .bottom-home {
             .container {
                 @include flex-utils(flex, column-reverse, center, center);
@@ -1839,7 +1843,7 @@
             }
         }
     }
-    @include responsivo('tablet') {
+    @include mixins.responsivo('tablet') {
         .home {
             .container {
                 @include flex-utils(flex, column, center, center);
@@ -1892,7 +1896,7 @@
             }
         }
     }
-    @include responsivo('mobile') {
+    @include mixins.responsivo('mobile') {
         .home {
             padding-top: 44px;
             padding-bottom: 194px;
@@ -2057,7 +2061,7 @@
         height: 120px;
         background-color: $white;
     }
-    @include responsivo('tablet') {
+    @include mixins.responsivo('tablet') {
         .home {
             .container {
                 @include flex-utils(flex, column, center, center);
@@ -2096,7 +2100,7 @@
     }
 }
 
-@include responsivo('tablet') {
+@include mixins.responsivo('tablet') {
     .menu-choice {
         background-color: $black;
         max-width: 80px;

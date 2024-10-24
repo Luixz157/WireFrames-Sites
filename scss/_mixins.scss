@@ -1,31 +1,38 @@
-@mixin flex-utils($display, $flexDirection ,$aligItens, $justifyContent, ) {
+// _mixins.scss
+// Remova a importação duplicada ou circular
+// Não é necessário importar 'mixins' aqui se você já está definindo-os neste arquivo.
+@use "sass:map";
+
+@mixin flex-utils($display, $flexDirection, $alignItems, $justifyContent) {
     display: $display;
     flex-direction: $flexDirection;
-    align-items: $aligItens;
+    align-items: $alignItems;
     justify-content: $justifyContent;
-}
-
-@mixin font-utils($family, $weight, $size, $lHeight, $lSpacing, $color) {
+  }
+  
+  @mixin font-utils($family, $weight, $size, $lineHeight, $letterSpacing, $color) {
     font-family: $family, sans-serif;
     font-weight: $weight;
     font-size: $size;
-    line-height: $lHeight;
-    letter-spacing: $lSpacing;
+    line-height: $lineHeight;
+    letter-spacing: $letterSpacing;
     color: $color;
-}
-
-$breakpoints: (
+  }
+  
+  // Definição de breakpoints
+  $breakpoints: (
     'laptop': 1200px,
     'tablet': 991px,
     'mobile': 560px
-);
-
-@mixin responsivo($breakpointName) {
-    @if map-has-key($breakpoints, $breakpointName ) {
-        @media (max-width: map-get($breakpoints, $breakpointName)) {
-            @content;
-        }
+  );
+  
+  // Mixin para responsividade
+  @mixin responsivo($breakpointName) {
+    @if map.has-key($breakpoints, $breakpointName) {
+      @media (max-width: map.get($breakpoints, $breakpointName)) {
+        @content;
+      }
     } @else {
-        @warn "Este breakpoint que você definiu não existe!"
+      @warn "Este breakpoint que você definiu não existe!";
     }
-}
+  }
